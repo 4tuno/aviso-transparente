@@ -1,0 +1,32 @@
+OCULTAR EL AVISO DESDE CMD, SIN UNA APP EN SEGUNDO PLANO
+
+Conserva Aviso.cmd y Aviso.ps1 en la misma carpeta.
+Cierra primero Aviso Transparente si esta abierto.
+
+Desde CMD, dentro de esa carpeta:
+
+    Aviso.cmd ocultar
+    Aviso.cmd restaurar
+    Aviso.cmd estado
+
+Tambien puedes hacer doble clic en Aviso.cmd para ocultar.
+El lanzador usa Windows PowerShell, incluido en Windows, para llamar a la misma
+API de visibilidad que usa la app. CMD por si solo no tiene esa funcion.
+
+La accion se aplica una vez y el script termina. No queda un temporizador, un
+servicio ni un proceso vigilando. Si Windows vuelve a mostrar o recrea el aviso,
+ejecuta el comando otra vez. No se necesita reiniciar ni modificar la licencia.
+
+El script valida la clase exacta "Worker Window", el proceso Explorer de la sesion
+actual, los estilos y la posicion de la ventana. Si no la reconoce, no cambia nada.
+Restaurar vuelve a mostrar las ventanas compatibles actualmente detectadas.
+
+La comprobacion final espera solo 200 milisegundos para confirmar el cambio.
+ExecutionPolicy Bypass solo se aplica a ese proceso de PowerShell; no modifica
+la configuracion guardada de ejecucion de scripts.
+
+Si Windows cambia la forma de representar el aviso, este metodo puede dejar de
+funcionar. No elimina marcas de evaluacion o del modo de prueba.
+
+Referencia de la API:
+https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-showwindowasync

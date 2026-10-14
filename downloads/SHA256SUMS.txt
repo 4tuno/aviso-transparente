@@ -1,0 +1,2 @@
+1b35f1738702908c3b199f6b72d35ef6d61d5ed4cce4679a4612b91399bdde02  AvisoTransparente.exe
+0a9ed2ecd6cf76995d37d01df9cc92e4f33a639acc08f12c43c2adeaec6e0acf  AvisoTransparente.zip

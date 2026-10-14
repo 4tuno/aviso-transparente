@@ -1,0 +1,7 @@
+dist/
+*.exe
+!downloads/*.exe
+*.pdb
+*.tmp
+.vs/
+hotkey.ini
